@@ -11,10 +11,12 @@
   "rules": {
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-    "arrow-body-style": ["error", "as-needed"],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    // "arrow-body-style": ["error", "as-needed"],
+    // "react-hooks/rules-of-hooks": "error",
+    // "react-hooks/exhaustive-deps": "warn",
+    // "no-unused-vars": "warn",
     "import/prefer-default-export": "off",
+    "react/prop-types": "off",
     "max-len": [
       "warn",
       {

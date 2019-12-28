@@ -1,0 +1,26 @@
+@import '../../../theme/index.scss';
+
+nav {
+  height: 70px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  justify-content: flex-end;
+  background-color: $primary;
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 20px;
+      color: $contrastText;
+      font-family: $font-secondary;
+      font-weight: 800;
+      text-transform: uppercase;
+      &:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
