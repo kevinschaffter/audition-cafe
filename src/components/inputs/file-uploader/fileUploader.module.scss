@@ -1,0 +1,36 @@
+@import '../../../theme';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  label:first-of-type {
+    font-weight: 700;
+    font-size: 0.92857143em;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 0.2rem;
+  }
+}
+.close {
+  cursor: pointer;
+  margin-left: 2px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.progress {
+  width: 200px;
+}
+.uploadBtn {
+  width: 200px;
+}
+.uploadContainer {
+  display: flex;
+  align-items: baseline;
+  a {
+    text-decoration: underline;
+    margin-left: 5px;
+    color: $secondary;
+    font-size: 17px;
+    font-weight: 800;
+  }
+}

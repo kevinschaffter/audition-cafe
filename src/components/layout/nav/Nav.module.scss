@@ -1,4 +1,4 @@
-@import '../../../theme/index.scss';
+@import '../../../theme';
 
 nav {
   height: 70px;
@@ -6,6 +6,7 @@ nav {
   display: flex;
   align-items: center;
   width: 100%;
+  z-index: $onTop;
   border-bottom: 1px solid gray;
   justify-content: flex-end;
   background-color: $primary;

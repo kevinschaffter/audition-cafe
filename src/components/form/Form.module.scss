@@ -1,0 +1,11 @@
+@import '../../theme';
+
+.formContainer {
+  form {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-row-gap: 10px;
+    max-width: $content-width !important;
+    margin: auto;
+  }
+}

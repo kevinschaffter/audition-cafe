@@ -4,13 +4,14 @@ import { db } from '../../firebase/config';
 const useMutation = () => {
   const [error, setError] = useState('');
 
-  const mutate = ({ id, collection, type, param }) => {
+  const mutate = ({ docId, collection, type, param }) => {
     setError('');
     const dbRef = db.collection(collection);
     try {
       const action = {
         add: () => dbRef.add(param),
-        delete: () => dbRef.doc(id).delete(),
+        delete: () => dbRef.doc(docId).delete(),
+        update: () => dbRef.doc(docId).update(param),
       }[type];
       action();
     } catch (e) {

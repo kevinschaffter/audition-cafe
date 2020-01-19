@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCPGumztAqksjYDUybQc36F34qNsKgdwlg',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: 'audition-cafe.firebaseapp.com',
   databaseURL: 'https://audition-cafe.firebaseio.com',
   projectId: 'audition-cafe',
@@ -15,12 +15,12 @@ firebase.initializeApp(firebaseConfig);
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
+export const googleAuth = () => firebase.auth().signInWithPopup(googleAuthProvider);
+
 export const db = firebase.firestore();
 
 export const { currentUser } = firebase.auth();
 
 export const auth = firebase.auth();
 
-export const storage = firebase.storage().ref();
-
-export const googleAuth = () => firebase.auth().signInWithPopup(googleAuthProvider);
+export const storageRef = firebase.storage().ref();

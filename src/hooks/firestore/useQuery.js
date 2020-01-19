@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { db } from '../../firebase/config';
 
-const useQuery = ({ where, collection }) => {
+const useQuery = ({ where, collection, skip }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (skip) return;
     const fetch = async () => {
       try {
         const dbRef = where ? db.collection(collection).where(...where) : db.collection(collection);
@@ -20,7 +21,9 @@ const useQuery = ({ where, collection }) => {
       }
     };
     fetch();
-  }, [collection, error]);
+    // Purposely leaving where out as it is passed by reference. Need to look at another solution.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [collection, error, skip]);
 
   return { data, error, loading };
 };
